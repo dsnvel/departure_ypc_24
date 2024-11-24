@@ -1,0 +1,20 @@
+---
+version: '3.8'
+services:
+  postgres:
+    image: postgres:16
+    container_name: stankinello_postgres
+    ports:
+      - '${POSTGRES_PORT:-9000}:5432'
+    restart: always
+    environment:
+      PGUSER: postgres
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_USER: postgres
+      POSTGRES_DB: main
+    volumes:
+      - stankinello_volume:/var/lib/postgresql/data
+
+volumes:
+  stankinello_volume:
+    external: true
