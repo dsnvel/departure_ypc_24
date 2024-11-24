@@ -18,7 +18,7 @@ body {
     background-color: EDEDED;
     color: black;
     padding: 20px;
-    width: 200px;
+    width: 400px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -30,20 +30,40 @@ body {
     font-size: 20px;
 }
 
-.navbar button {
-    background-color: white;
-    color: #2a2a72;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+.nav-event-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 5px;
+    margin-bottom: 10px;
+    width: 200px;
+    height: 40px;
     cursor: pointer;
-    text-align: left;
-    font-size: 14px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
 }
 
-.navbar button:hover {
-    background-color: #4a4abf;
-    color: white;
+.nav-event-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-event-card .nav-event-date {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+}
+
+.nav-event-card .nav-event-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
 }
 
 .content {
@@ -65,7 +85,7 @@ body {
     background-color: #e0e0e0;
     border-radius: 8px;
     padding: 15px;
-    min-width: 300px;
+    min-width: 400px;
 }
 
 .event-card {

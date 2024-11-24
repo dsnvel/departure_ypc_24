@@ -4,17 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список мероприятий</title>
-    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href="../../static/css/body.css">
 </head>
 <body>
     <div class="main-container">
         <!-- Static Sidebar Navbar -->
         <div class="navbar">
             <h2>Навигация</h2>
-            <button onclick="filterEvents('upcoming')">Ближайшие</button>
-            <button onclick="filterEvents('sport')">#Спорт</button>
-            <button onclick="filterEvents('all')">Все</button>
+            <div class="nav-event-card" onclick="filterEvents('upcoming')">
+                <div class="nav-event-date">
+                    <p class="date-number">24</p>
+                    <p class="date-month">ноября</p>
+                </div>
+                <h4 class="nav-event-name">Ближайшие</h4>
+            </div>
+            <div class="nav-event-card" onclick="filterEvents('sport')">
+                <div class="nav-event-date">
+                    <p class="date-number">25</p>
+                    <p class="date-month">ноября</p>
+                </div>
+                <h4 class="nav-event-name">#Спорт</h4>
+            </div>
+            <div class="nav-event-card" onclick="filterEvents('all')">
+                <div class="nav-event-date">
+                    <p class="date-number">28</p>
+                    <p class="date-month">ноября</p>
+                </div>
+                <h4 class="nav-event-name">Все</h4>
+            </div>
         </div>
+        
 
         <div class="content">
 
