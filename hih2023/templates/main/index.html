@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'includes/header-footer.html'%}
+
+{% block content %}
+
+{% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Список мероприятий</title>
-    <link rel="stylesheet" href="body.css">
+    <link rel="stylesheet" href='{% static "css/body.css" %}'>
 </head>
+
 <body>
     <div class="main-container">
         <!-- Static Sidebar Navbar -->
@@ -36,23 +40,37 @@
                     </div>
                 </div>
 
+                {% for current_tag, meetings in meetings_tags.items %}
                 <div class="column">
-                    <h3>#Спорт</h3>
+                    <h3>{{ current_tag }}</h3>
+
+                    {% for meeting in meetings %}
+                    <div class="event-card" onclick="showModal('{{ meeting.meeting_name }}', '{{ meeting.begin_date_time|date }}', 'Место: {{ meeting.meeting_name }}', 'Организатор: {{ meeting.owner }}', '{{ meeting.description }}')">
+                        <div class="event-date">
+                            <p class="date-number">{{ meeting.begin_date_time|date }}</p>
+                            <!-- Нужно исправить -->
+                            <!-- <p class="date-month">ноября</p> -->
+                        </div>
+                        <div class="event-details">
+                            <h4 class="event-name">{{ meeting.meeting_name }}</h4>
+                            <p class="event-info">Дата: {{ meeting.begin_date_time|date }}</p>
+                            <p class="event-info">Место: {{ meeting.meeting_name }}</p>
+                            <p class="event-info">Организатор: {{ meeting.owner }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
 
                 </div>
+                {% endfor %}
 
                 <div class="column">
                     <h3>#Все события</h3>
                 
                 </div>
-                <div class="column">
-                    <h3>#Не спорт</h3>
 
-                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
     <div id="event-modal" class="modal">
@@ -66,7 +84,6 @@
                 <p class="modal-info"><strong></strong> <span id="modal-location"></span></p>
                 <p class="modal-info"><strong></strong> <span id="modal-organizer"></span></p>
                 <p id="modal-description" class="modal-description"></p>
-                <p id="modal-description" class="modal-description"></p>
             </div>
             <div class="modal-footer">
                 <button class="tag-button">#спорт</button>
@@ -75,6 +92,6 @@
         </div>
     </div>
 
-    <script src="body.js"></script>
+    <script src='{% static "js/body.js" %}'></script>
 </body>
-</html>
+{% endblock %}
