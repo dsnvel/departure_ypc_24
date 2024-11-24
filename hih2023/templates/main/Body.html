@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список мероприятий</title>
+    <link rel="stylesheet" href="body.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Static Sidebar Navbar -->
+        <div class="navbar">
+            <h2>Навигация</h2>
+            <button onclick="filterEvents('upcoming')">Ближайшие</button>
+            <button onclick="filterEvents('sport')">#Спорт</button>
+            <button onclick="filterEvents('all')">Все</button>
+        </div>
+
+        <div class="content">
+
+            <div class="columns-wrapper">
+                <!-- Column 1 -->
+                <div class="column">
+                    <h3>Ближайшие мероприятия</h3>
+                    <div class="event-card" onclick="showModal('Концерт', '24.11.2024', 'Место: Санкт-Петербург', 'Организатор: Кто-то', 'Соревнования по баскетболу между мужскими сборными командами МГТУ «СТАНКИН» и МЭИ-2 в рамках XXXVII Московских студенческих спортивных игр.')">
+                        <div class="event-date">
+                            <p class="date-number">24</p>
+                            <p class="date-month">ноября</p>
+                        </div>
+                        <div class="event-details">
+                            <h4 class="event-name">Концерт</h4>
+                            <p class="event-info">Дата: 24.11.2024</p>
+                            <p class="event-info">Место: Санкт-Петербург</p>
+                            <p class="event-info">Организатор: Кто-то</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <h3>#Спорт</h3>
+
+                </div>
+
+                <div class="column">
+                    <h3>#Все события</h3>
+                
+                </div>
+                <div class="column">
+                    <h3>#Не спорт</h3>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <p class="modal-info-data"><strong></strong> <span id="modal-date"></span></p>
+                <h4 id="modal-title" class="modal-title">Баскетбол: СТАНКИН - МЭИ</h4>
+            </div>
+            <div class="modal-body">
+                <p class="modal-info"><strong></strong> <span id="modal-location"></span></p>
+                <p class="modal-info"><strong></strong> <span id="modal-organizer"></span></p>
+                <p id="modal-description" class="modal-description"></p>
+                <p id="modal-description" class="modal-description"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="tag-button">#спорт</button>
+                <button class="register-button">Зарегистрироваться</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="body.js"></script>
+</body>
+</html>
