@@ -47,7 +47,7 @@
                     {% for meeting in meetings %}
                     <div class="event-card" onclick="showModal('{{ meeting.meeting_name }}', '{{ meeting.begin_date_time|date }}', 'Место: {{ meeting.meeting_name }}', 'Организатор: {{ meeting.owner }}', '{{ meeting.description }}')">
                         <div class="event-date">
-                            <p class="date-number">{{ meeting.begin_date_time|date }}</p>
+                            <p class="date-number">{{ meeting.begin_date_time|date:"d M" }}</p>
                             <!-- Нужно исправить -->
                             <!-- <p class="date-month">ноября</p> -->
                         </div>

@@ -24,7 +24,6 @@ def index(request: HttpRequest):
 
     data['user'] = user
     data['meetings_tags'] = meetings_tags
-    print(meetings_tags)
 
     return render(request, template, context=data)
 
@@ -62,8 +61,9 @@ def test(request: HttpRequest):
     print("IS OKEY!")'''
 
 
-def profile_detail():
-    pass
+def profile_detail(request: HttpRequest):
+    template = 'main/profile.html'
+    return render(request, template)
 
 
 def registration_view():

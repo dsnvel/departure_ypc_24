@@ -1,13 +1,9 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
 
 .footer {
     background-color: #002d6b;
     color: #ffffff;
     padding: 20px 0;
+    position: relative;
 }
 
 .footer-container {
@@ -17,6 +13,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    position: relative;
 }
 
 .footer-section {
